@@ -1,0 +1,66 @@
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Login Form */
+
+#login-form {
+    border: 1px solid black;
+    margin: auto;
+    width: 40%;
+    text-align: left;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#login-form > h2 {
+    text-align: center;
+    padding: 10px;
+    background-color: cadetblue;
+    margin: 0;
+}
+#login-form > label {
+    font-weight: bold;
+}
+#login-form > input {
+    width: 100%;
+    font-size: 1em;
+    border: 1px solid black;
+
+}
+
+#login-form > #btn-login {
+    width: 50%;
+    
+}
+
+
+/* Input Information Form */
+
+#info-input-form, #update-input-form {
+    border: 1px solid rgb(74, 74, 74);
+    text-align: left;
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+}
+
+#info-input-form > input, #update-input-form > input {
+    width: 100%;
+}
+
+#info-input-form > input[type="radio"], #update-input-form > input[type=radio] {
+    width: 10%;
+}
+
+#info-input-form > select, #update-input-form > select{
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(1, 32, 33);
+}

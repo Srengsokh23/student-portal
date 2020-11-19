@@ -1,0 +1,269 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRST Student Portal</title>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+    <!-- Bootstrap Jquery and CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Local JS -->
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <img src="img/crst-logo.png" alt="CRST Logo" style="width: 40px;">
+            &nbsp;&nbsp;Cambodia Rural Student Trust NGO
+        </a>
+        <!-- Toggler Icon for responsiveness -->
+        <button id="toggle-icon" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <!--Menu sets on the left -->
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+            <!--Menu sets on the right -->
+            <!--Each individual item can be secured by adding the class: secured -->
+            <ul class="navbar-nav ml-auto">
+                    <li class="nav-item secured login-nav">
+                        <a class="nav-link" href="#dashboard-page-admin">Dashboard</a>
+                    </li>
+                    <li class="nav-item secured loged-in-nav">
+                        <a class="nav-link" href="#info-input-page">Input Information</a>
+                    </li>
+                    <li class="nav-item secured loged-in-nav">
+                        <a class="nav-link" href="#update-input-page">Update Information</a>
+                    </li>
+                    <li class="nav-item secured loged-in-nav">
+                        <a class="nav-link" href="#welcome-page"><i class="fa fa-sign-out"></i> &nbsp; Logout</a>
+                    </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br><br><br><br>
+    <!-- Everything is wrapped inside this container-fluid -->
+    <div class="container-fluid">
+
+        <!-- all the content must be inside this row  -->
+        <div class="row text-center">
+            <!-- empty space on the left of the screen - this acts as the margin -->
+            <div class="col-sm-2"></div>
+            <!-- All the content will need to go iside this col-sm-8 for beautiful design -->
+            <div class="col-sm-8">
+                
+                <!--  Welcome and Login Page -->
+                <div class="row welcome-page content-wrapper" id="welcome-page" style="display: none;">
+                    <div class="col-sm-12">
+                        <div class="row welcome-message">
+                            <div class="col-sm-12">
+                                <br><br>
+                                <h1>Welcome to CRST Student Portal</h1>
+                            </div>
+                        </div>
+                        <br><br><br>
+                        <div class="row div-login-form">
+                            <div class="col-sm-12">
+                                <form action="#" id="login-form">
+                                    <h2>Login</h2>
+                                    <br>
+                                    <label style="text-align: left;" for="username">Username:</label><br>
+                                    <input type="text" id="username" name="username"> <br><br>
+                                    <label for="password">Password:</label><br>
+                                    <input type="password" id="password" name="password"><br><br>
+                                    <button value="login" class="btn btn-primary" id="btn-login">Log In</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  Dashboard for General Students Page -->
+                <div class="row dashboard-page-admin content-wrapper" id="dashboard-page-admin" style="display: none;">
+                    <div class="col-sm-12">
+                        <h1>Welcome to our Dashboard</h1>
+                    </div>
+                    
+                </div>
+
+                <!--  Dashboard for Admin Page -->
+                <div class="row dashboard-page-user content-wrapper" id="dashboard-page-user" style="display: none;">
+                    <div class="col-sm-12">
+                        <h1>Welcome to our Admin Dashboard</h1>
+                    </div>
+                    
+                </div>
+
+                <!--  Input Information Page -->
+                <div class="row info-input-page content-wrapper" id="info-input-page" style="display: none;">
+                    <div class="col-sm-12">
+                        <h1>Please Provide the Following Information</h1>
+                        <br><br><br>
+                        <form action="#" id="info-input-form">
+                            <label for="name-en">Full Name (EN): </label>
+                            <input type="text" name="name-en" id="name-en"><br>
+
+                            <label for="name-kh">Full Name (KH):</label>
+                            <input type="text" name="name-kh" id="name-kh"><br>
+
+                            <label for="student-id">Student ID:</label>
+                            <input type="text" id="student-id"><br><br>
+
+                            <label for="gedner">Gender</label> &nbsp;
+                            <input type="radio" name="gender" id="male" value="male">
+                            <label for="male">Male</label>  &nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="gender" id="female" value="female">
+                            <label for="female">Female</label><br><br>
+
+                            <label for="phone-number">Phone Number:</label>
+                            <input type="text" name="phone-number" id="phone-number"> <br>
+
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email"><br>
+
+                            <label for="address">Address: </label>
+                            <input type="text" name="address" id="address"><br>
+
+                            <label for="guardian">Guardian(s) (KH): </label>
+                            <input type="text" name="guardian" id="guardian"><br>
+
+                            <label for="guardian-phone">Guardian's Phone Number:</label>
+                            <input type="text" name="guardian-phone" id="guardian-phone"><br>
+
+                            <label for="date-of-birth">Date of Birth:</label>
+                            <input type="date" name="date-of-birth" id="date-of-birth"><br><br>
+
+                            <label for="position">NGO's Position</label>
+                            <select name="position" id="position">
+                                <option value="ngo-manager">NGO Manager</option>
+                                <option value="py-gm">Project Y General Manager</option>
+                                <option value="pg-gm">Project G Manager</option>
+                                <option value="pb-gm">Project B Manager</option>
+                                <option value="assistant-ngo-manager">Assistant NGO Manager</option>                                
+                            </select><br><br>
+
+                            <label for="year-join-ngo">Year Joined NGO:</label>
+                            <input type="text" name="year-join-ngo" id="year-join-ngo"><br>
+
+                            <label for="school">School:</label>
+                            <input type="text" name="school" id="school"><br>
+
+                            <label for="student-status">Level</label>
+                            <input type="text" name="student-status" id="student-status"><br><br>
+
+                            <button value="input-form-submit" class="btn btn-primary" id="btn-input-form-submit">Submit</button>
+                            
+                        </form>
+                    </div>
+                    
+                </div>
+
+                <!--  Input Information Page -->
+                <div class="row update-input-page content-wrapper" id="update-input-page" style="display: none;">
+                    <div class="col-sm-12">
+                        <h1>Please Provide the Following Information</h1>
+                        <br><br><br>
+                        <form action="#" id="update-input-form">
+                            <label for="update-info">Which informaiton you want to change? </label>
+                            <select name="update-info" id="update-info">
+                                <option value="name-en">Full Name (EN)</option>
+                                <option value="name-kh">Full Name (KH)</option>
+                                <option value="student-id">Studnet ID</option>
+                                <option value="gender">Gender</option>
+                                <option value="phone-number">Phone Number</option>
+                                <option value="email">Email</option>
+                                <option value="address">Address</option>
+                                <option value="guardian">Guardian(s) (KH)</option>
+                                <option value="guardian-phone">Guardian's phone-number</option>
+                                <option value="date-of-birth">Date of Birth</option>
+                                <option value="position">NGO Position</option>
+                                <option value="year-join-ngo">Year Join NGO</option>
+                                <option value="school">School</option>
+                                <option value="student-status">Level</option>
+                            </select> 
+                            <br><br>
+                            
+                            <label class="form-wrapper name-en" for="name-en" style="display: none;">Full Name (EN): </label>
+                            <input class="form-wrapper name-en" type="text" name="name-en" id="name-en" style="display: none;">
+
+                            <label class="form-wrapper name-kh" for="name-kh" style="display: none;">Full Name (KH):</label>
+                            <input class="form-wrapper name-kh" type="text" name="name-kh" id="name-kh" style="display: none;">
+
+                            <label class="form-wrapper student-id" for="student-id" style="display: none;">Student ID:</label>
+                            <input class="form-wrapper student-id" type="text" id="student-id" style="display: none;">
+
+                            <label class="form-wrapper gedner gender" for="gedner" style="display: none;">Gender &nbsp;</label> 
+                            <input class="form-wrapper gender" type="radio" name="gender" id="male" value="male" style="display: none;">
+                            <label class="form-wrapper gender" for="male" style="display: none;">Male &nbsp;&nbsp;&nbsp;</label>  
+                            <input class="form-wrapper gender" type="radio" name="gender" id="female" value="female" style="display: none;">
+                            <label class="form-wrapper gender" for="female" style="display: none;">Female</label>
+
+                            <label class="form-wrapper phone-number" for="phone-number" style="display: none;"> Phone Number:</label>
+                            <input class="form-wrapper phone-number" type="text" name="phone-number" id="phone-number" style="display: none;">
+
+                            <label class="form-wrapper email" for="email" style="display: none;">Email:</label>
+                            <input class="form-wrapper email" type="email" name="email" id="email" style="display: none;">
+
+                            <label class="form-wrapper address" for="address" style="display: none;">Address: </label>
+                            <input class="form-wrapper address" type="text" name="address" id="address" style="display: none;">
+
+                            <label class="form-wrapper guardian" for="guardian" style="display: none;">Guardian(s) (KH): </label>
+                            <input class="form-wrapper guardian" type="text" name="guardian" id="guardian" style="display: none;">
+
+                            <label class="form-wrapper guardian-phone" for="guardian-phone" style="display: none;">Guardian's Phone Number:</label>
+                            <input class="form-wrapper guardian-phone" type="text" name="guardian-phone" id="guardian-phone" style="display: none;">
+
+                            <label class="form-wrapper date-of-birth" for="date-of-birth" style="display: none;">Date of Birth:</label>
+                            <input class="form-wrapper date-of-birth" type="date" name="date-of-birth" id="date-of-birth" style="display: none;">
+
+                            <label class="form-wrapper position" for="position" style="display: none;">NGO's Position</label>
+                            <select class="form-wrapper position" name="position" id="position" style="display: none;">
+                                <option value="ngo-manager">NGO Manager</option>
+                                <option value="py-gm">Project Y General Manager</option>
+                                <option value="pg-gm">Project G Manager</option>
+                                <option value="pb-gm">Project B Manager</option>
+                                <option value="assistant-ngo-manager">Assistant NGO Manager</option>                                
+                            </select>
+
+                            <label class="form-wrapper year-join-ngo" for="year-join-ngo" style="display: none;">Year Joined NGO:</label>
+                            <input class="form-wrapper year-join-ngo" type="text" name="year-join-ngo" id="year-join-ngo" style="display: none;">
+
+                            <label class="form-wrapper school" for="school" style="display: none;">School:</label>
+                            <input class="form-wrapper school" type="text" name="school" id="school" style="display: none;">
+
+                            <label class="form-wrapper student-status" for="student-status" style="display: none;">Level</label>
+                            <input class="form-wrapper student-status" type="text" name="student-status" id="student-status" style="display: none;">
+                            </select> 
+                            <br><br>
+
+                            <button value="input-form-submit" class="btn btn-primary" id="btn-input-form-submit">Submit</button>
+                            
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- empty space on the right of the screen - this acts as the margin -->
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+    <br><br><br><br><br><br>
+    <footer class="fixed-bottom">
+
+    </footer>
+</body>
+</html>
